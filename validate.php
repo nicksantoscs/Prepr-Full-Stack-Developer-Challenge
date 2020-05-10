@@ -12,7 +12,7 @@ $password = $_POST['password'];
 
 try {
     require_once 'db.php';
-    $sql = "SELECT userId, password FROM users WHERE username = :username";
+    $sql = "SELECT user_id, password FROM users WHERE username = :username";
 
     $cmd = $db->prepare($sql);
     $cmd->bindParam(':username', $username, PDO::PARAM_STR, 50);
@@ -28,7 +28,7 @@ try {
         session_start();
 
         // Create a session variable called "userId" and fill it from the id in our login query above
-        $_SESSION['userId'] = $user['userId'];
+        $_SESSION['user_id'] = $user['user_id'];
 
         // Also store username in a 2nd session variable to display in navbar
         $_SESSION['username'] = $username;
