@@ -61,7 +61,7 @@ if (!empty($_GET['keywords'])) {
     }
 }
 
-// Create a Command variable $cmd then use it to run the SQL Query
+// Create a command variable $cmd then use it to run the SQL Query
 $cmd = $db->prepare($query);
 $cmd->execute($wordList);
 
