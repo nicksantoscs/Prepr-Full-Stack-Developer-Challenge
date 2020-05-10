@@ -17,7 +17,7 @@
                 }
             }(document, 'script', 'weatherwidget-io-js');
         </script>
-        <!-- weather widget end -->
+        <!-- Weather widget end -->
     </div>
 </footer>
 

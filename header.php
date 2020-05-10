@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Labs & Challenges - <?php echo $title; ?></title>
+    <title>Welcome - <?php echo $title; ?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
         <!-- Brand -->
         <a class="navbar-brand" href="index.php">Labs</a>
 
-        <!-- Toggler/collapsibe Button -->
+        <!-- Toggle/collapsible Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,7 +32,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <?php
-                //Access current session to check if user is authenticated
+                // Access current session to check if user is authenticated
                 session_start();
                 if (!empty($_SESSION['userId'])) {
                     echo '<li class="nav-item"><a class="nav-link" href="#">' . $_SESSION['username'] . '</a></li>
