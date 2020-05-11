@@ -59,9 +59,7 @@ if (!empty($_GET['labId'])) {
     <?php
 
     require_once 'db.php';
-
     // Start XML file, create parent node
-
     $dom = new DOMDocument("1.0");
     $node = $dom->createElement("markers");
     $parnode = $dom->appendChild($node);
