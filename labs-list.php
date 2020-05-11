@@ -72,19 +72,19 @@ $count = $cmd->rowCount();
 
 echo "<h5>$count Labs</h5>";
 
-// 4a. Create a grid with a header row
-echo '<table class="table table-striped table-hover sortable"><thead><th><a href="#">Name</a></th><th>
+// Create a grid with a header row
+echo '<table class="table table-striped table-hover sortable"><thead><th><a href="#">Lab Name</a></th><th>
         <a href="#">Date Added</a></th>
         <th><a href="#">Location</a></th><th></th><th></th></thead>';
 
-// 5. Use a foreach loop to iterate (cycle) through all the values in the $labs variable.  Inside this loop, use an echo command to display the name of each lab
+// Use a foreach loop to iterate (cycle) through all the values in the $labs variable.  Inside this loop, I used an echo command to display the name of each lab
 foreach ($labs as $value) {
     echo '<tr>';
 
     if (!empty($_SESSION['userId'])) {
-        echo '<td><a href="labs.php?labId=' . $value['lab_id'] . '">' . $value['name'] . '</a></td>';
+        echo '<td><a href="labs.php?labId=' . $value['lab_id'] . '">' . $value['lab_name'] . '</a></td>';
     } else {
-        echo '<td>' . $value['name'] . '</td>';
+        echo '<td>' . $value['lab_name'] . '</td>';
     }
 
     echo '<td>' . $value['dateAdded'] . '</td>
@@ -93,16 +93,15 @@ foreach ($labs as $value) {
     if (!empty($_SESSION['userId'])) {
         echo '<td><a href="delete-lab.php?lab_id=' . $value['lab_id'] . '" class="btn btn-danger"
                 onclick="return confirmDelete();">Delete</a></td>';
-        //adding delete-lab now, still have to create the file
     }
 
     echo '</tr>';
 }
 
-// 5a. End the HTML table
+// End the HTML table
 echo '</table>';
 
-// 6. Disconnect from the database
+// Disconnect from the database
 $db = null;
 
 require_once 'footer.php';
